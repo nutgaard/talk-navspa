@@ -1,0 +1,12 @@
+{
+  "name": "parent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.js --port 2002",
+    "build": "parcel build index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

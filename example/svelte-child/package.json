@@ -1,0 +1,14 @@
+{
+  "name": "parent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.ts --port 2004"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-plugin-svelte": "^4.0.9"
+  }
+}

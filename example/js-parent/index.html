@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS-Parent</title>
+    <script src="http://localhost:2002/index.js" type="application/javascript"></script>
+    <script src="http://localhost:2003/index.js" type="application/javascript"></script>
+    <script src="http://localhost:2004/index.js" type="application/javascript"></script>
+</head>
+<body>
+<h1>JS Parent</h1>
+
+<script>
+    const scope = window['NAVSPA-V2'] || {};
+    function render(app) {
+        const container = document.createElement('div');
+        app.mount(container, { name: 'frontend-forum' });
+        document.body.appendChild(container);
+    }
+
+    render(scope['js-child']);
+    render(scope['react-child']);
+    render(scope['svelte-child']);
+
+</script>
+</body>
+</html>
