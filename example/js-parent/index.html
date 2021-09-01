@@ -9,18 +9,56 @@
 </head>
 <body>
 <h1>JS Parent</h1>
-
+<div id="buttons"></div>
 <script>
     const scope = window['NAVSPA-V2'] || {};
-    function render(app) {
+    const buttons = document.getElementById('buttons')
+    function render(appname) {
+        let mounted = true;
+        const props = { name: 'frontend-forum' };
+
+        const btnContainer = document.createElement('div');
+        const mountBtn = document.createElement('button');
+        mountBtn.innerText = `Mount ${appname}`;
+        mountBtn.dataset.action = 'mount';
+        btnContainer.appendChild(mountBtn);
+        const unmountBtn = document.createElement('button')
+        unmountBtn.innerText = `Unmount ${appname}`;
+        unmountBtn.dataset.action = 'unmount';
+        btnContainer.appendChild(unmountBtn);
+        buttons.appendChild(btnContainer);
+
+        const updateBtnState = () => {
+            mountBtn.disabled = mounted;
+            unmountBtn.disabled = !mounted;
+        }
+
+        updateBtnState();
+
+        btnContainer.addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON') {
+                if (e.target.dataset.action === 'mount') {
+                    console.log('mounting', appname);
+                    scope[appname].mount(container, props);
+                    mounted = true;
+                    updateBtnState();
+                } else {
+                    console.log('unmounting', appname);
+                    scope[appname].unmount(container);
+                    mounted = false;
+                    updateBtnState();
+                }
+            }
+        })
+
         const container = document.createElement('div');
-        app.mount(container, { name: 'frontend-forum' });
+        scope[appname].mount(container, props);
         document.body.appendChild(container);
     }
 
-    render(scope['js-child']);
-    render(scope['react-child']);
-    render(scope['svelte-child']);
+    render('js-child');
+    render('react-child');
+    render('svelte-child');
 
 </script>
 </body>
