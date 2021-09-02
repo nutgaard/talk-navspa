@@ -10,7 +10,7 @@
     "start:js-child": "cd js-child && npm start",
     "start:react-child": "cd react-child && npm start",
     "start:svelte-child": "cd svelte-child && npm start",
-    "start:async-child": "echo ASYNC && cd async-child && npm start"
+    "start:async-child": "cd async-child && npm start"
   },
   "author": "",
   "license": "ISC",

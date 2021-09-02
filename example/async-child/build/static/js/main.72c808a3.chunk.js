@@ -1,0 +1,2 @@
+(this["webpackJsonptemp-app"]=this["webpackJsonptemp-app"]||[]).push([[0],{6:function(n,p,s){"use strict";s.r(p);s(0);var c=s(4),e=s.n(c),t=s(5);e.a.eksporter("async-child",(function(n){return Object(t.jsxs)("h2",{children:["From async-child: ",n.name]})}))}},[[6,1,2]]]);
+//# sourceMappingURL=main.72c808a3.chunk.js.map

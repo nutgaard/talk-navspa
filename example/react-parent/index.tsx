@@ -1,5 +1,5 @@
 import * as React from 'react';
-import ReactDOM from 'react-dom';
+import * as ReactDOM from 'react-dom';
 import NAVSPA, { AsyncNavspa } from "@navikt/navspa";
 
 
@@ -11,7 +11,7 @@ const JsApp = React.memo(NAVSPA.importer<ChildProps>('js-child'));
 const ReactApp = NAVSPA.importer<ChildProps>('react-child');
 const SvelteApp = React.memo(NAVSPA.importer<ChildProps>('svelte-child'));
 const AsyncApp = AsyncNavspa.importer<ChildProps>({
-    appName: 'cra-child',
+    appName: 'async-child',
     appBaseUrl: 'http://localhost:2005',
     loader: <p>Laster Async-app</p>
 })
